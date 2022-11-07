@@ -64,8 +64,8 @@ public class produittest {
     	pro.setLibelleProduit("fdgdfgfd");
     	pro.setCodeProduit("code123");
     	pro.setIdProduit((long) 5);
-    	pro.setDateCreation(new java.util.Date(2020, 10, 20));
-    	pro.setDateDerniereModification(new java.util.Date(2021, 20, 10));
+    	//pro.setDateCreation(new java.util.Date(2020, 10, 20));
+    	//pro.setDateDerniereModification(new java.util.Date(2021, 20, 10));
 
 		when(rr.addProduit(pro)).thenReturn(pro);
 
