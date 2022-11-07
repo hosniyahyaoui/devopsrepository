@@ -17,6 +17,12 @@
 		<java.version>8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<distributionManagement>
+  <repository>
+   <id>nexusrepo</id>
+   <url>http://192.168.10.20:8081/repository/2022/</url>
+  </repository>
+ </distributionManagement>
 	
 	<dependencies>
 		<dependency>
@@ -61,6 +67,14 @@
 
 	<build>
     <plugins>
+	    <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+</plugin>
+	    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-deploy-plugin</artifactId>
+   </plugin>
     <plugin>
      <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-resources-plugin</artifactId>
