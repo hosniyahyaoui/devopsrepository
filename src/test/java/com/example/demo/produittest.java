@@ -29,14 +29,15 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.example.demo.controllers.StockRestController;
+
 import com.example.demo.entities.Produit;
-import com.example.demo.entities.Stock;
+
 import com.example.demo.repositories.ProduitRepository;
-import com.example.demo.repositories.StockRepository;
+
 import com.example.demo.services.IProduitService;
-import com.example.demo.services.IStockService;
-import com.example.demo.services.StockServiceImpl;
+
+import com.example.demo.services.ProduitServiceImpl;
+
 
 
 
@@ -47,24 +48,26 @@ import org.mockito.junit.MockitoJUnitRunner;
 @DataJpaTest 
 
 @SpringBootTest(classes=DemoApplication.class)
-public class test {
+public class produittest {
 	@Mock
-	StockRepository StockRepo;
+	ProduitRepository ProduitRepo;
 	@InjectMocks
-	StockServiceImpl ss;
+	ProduitServiceImpl rr;
     @Test
     @Order('1')
     public void Add() 
     {
-    	StockRepository StockRepo;
-    	//StockServiceImpl ss=mock(StockServiceImpl.class);
-    	Stock st =  new Stock();
-		st.setLibelleStock("gjhgjh");
-		st.setQte(180);
-		st.setQteMin(10);
-		st.setIdStock((long) 4);
-		when(ss.addStock(st)).thenReturn(st);
-//		assertNotEquals(st.getIdStock(), null);
-        //System.out.print(ss.addStock(st).getIdStock());
+    	ProduitRepository ProduitRepo;
+    	
+    	Produit pro=  new Produit();
+    	pro.setPrix(120);
+    	pro.setLibelleProduit("fdgdfgfd");
+    	pro.setCodeProduit("code123");
+    	pro.setIdProduit((long) 5);
+    	pro.setDateCreation(new java.util.Date(2020, 10, 20));
+    	pro.setDateDerniereModification(new java.util.Date(2021, 20, 10));
+
+		when(rr.addProduit(pro)).thenReturn(pro);
+
     }
 }
