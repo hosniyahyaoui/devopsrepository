@@ -56,8 +56,8 @@ public class produittest {
     	pro.setLibelleProduit("fdgdfgfd");
     	pro.setCodeProduit("code123");
     	pro.setIdProduit((long) 5);
-    	pro.setDateCreation(null);
-    	pro.setDateDerniereModification(null);
+    //	pro.setDateCreation(null);
+    //	pro.setDateDerniereModification(null);
 
 		when(rr.addProduit(pro)).thenReturn(pro);
 
