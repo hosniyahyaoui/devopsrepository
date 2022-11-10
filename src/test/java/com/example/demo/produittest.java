@@ -1,15 +1,7 @@
 package com.example.demo;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import java.sql.Date;
 
 import org.apache.tomcat.util.http.parser.MediaType;
 import org.aspectj.lang.annotation.Before;
@@ -64,10 +56,11 @@ public class produittest {
     	pro.setLibelleProduit("fdgdfgfd");
     	pro.setCodeProduit("code123");
     	pro.setIdProduit((long) 5);
-    	//pro.setDateCreation(new java.util.Date(2020, 10, 20));
-    	//pro.setDateDerniereModification(new java.util.Date(2021, 20, 10));
+    	pro.setDateCreation(null);
+    	pro.setDateDerniereModification(null);
 
 		when(rr.addProduit(pro)).thenReturn(pro);
 
     }
 }
+
